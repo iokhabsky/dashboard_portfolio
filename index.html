@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Quicksand:wght@300..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="scss/main.css">
+    <title>Dashboard</title>
+</head>
+
+<body>
+
+    <div id="app" class="app">
+        <aside class="app-sidebar">
+            <a href="#" class="logo">
+                <svg class="icon icon-logo">
+                    <use href="./img/sprite.svg#logo"></use>
+                </svg>
+            </a>
+            <nav class="nav">
+                <a href="#" class="nav-item active">
+                    <svg class="icon">
+                        <use href="./img/sprite.svg#overview"></use>
+                    </svg>
+                    Overview
+                </a>
+                <a href="#" class="nav-item">
+                    <svg class="icon">
+                        <use href="./img/sprite.svg#transaction"></use>
+                    </svg>
+                    Transactions
+                </a>
+                <a href="#" class="nav-item">
+                    <svg class="icon">
+                        <use href="./img/sprite.svg#card"></use>
+                    </svg>
+                    Cards
+                </a>
+                <a href="#" class="nav-item">
+                    <svg class="icon">
+                        <use href="./img/sprite.svg#invoice"></use>
+                    </svg>
+                    Invoices
+                </a>
+                <a href="#" class="nav-item">
+                    <svg class="icon">
+                        <use href="./img/sprite.svg#goals"></use>
+                    </svg>
+                    Goals
+                </a>
+                <a href="#" class="nav-item">
+                    <svg class="icon">
+                        <use href="./img/sprite.svg#settings"></use>
+                    </svg>
+                    Settings
+                </a>
+            </nav>
+            <div class="upgrade">
+                <svg class="icon">
+                    <use href="./img/sprite.svg#bottom_cloud"></use>
+                </svg>
+                <p>
+                    Give your money
+                    awesome space in cloud
+                </p>
+                <a href="" class="btn btn-yellow">
+                    Upgrade to premium
+                    <svg class="icon">
+                        <use href="./img/sprite.svg#arrow-top"></use>
+                    </svg>
+                </a>
+            </div>
+        </aside>
+        <div class="app-data">
+            <header class="app-header">
+                <div class="app-header-text">
+                    <h1>Weekly sumup</h1>
+                    <h2>Get summary of your weekly online transactions here.</h2>
+                </div>
+                <div class="app-profile">
+                    <div class="messages">
+                        <svg class="icon">
+                            <use href="./img/sprite.svg#mail"></use>
+                        </svg>
+                    </div>
+                    <div class="notifications">
+                        <svg class="icon">
+                            <use href="./img/sprite.svg#bell"></use>
+                        </svg>
+                    </div>
+                    <div class="app-user">
+                        <svg class="icon">
+                            <use href="./img/sprite.svg#user"></use>
+                        </svg>
+                        <span class="name">
+                            Andrew
+                        </span>
+                        <span class="role">
+                            Admin account
+                        </span>
+                    </div>
+                </div>
+            </header>
+            <div class="app-content">
+                <div class="cards">
+                    <div class="white-block">
+                        <h3 class="block-title">
+                            Cards
+                        </h3>
+                        <div class="card">
+                            <div class="card-bank">
+                                <svg class="icon">
+                                    <use href="./img/sprite.svg#big_cloud"></use>
+                                </svg>
+                                <div class="card-data">
+                                    <span class="card-bank-name">
+                                        cloudcash
+                                    </span>
+                                    <span class="card-bank-status">
+                                        Premium Account
+                                    </span>
+                                    <p class="card-number">
+                                        <span>5789</span>
+                                        <span>* * * *</span>
+                                        <span>* * * *</span>
+                                        <span>2847</span>
+                                    </p>
+                                    <span class="card-holder">
+                                        <small>
+                                            Card holder
+                                        </small>
+                                        <span>
+                                            Mike Smith
+                                        </span>
+                                    </span>
+                                    <div class="card-expire">
+                                        <small>
+                                            Expire date
+                                        </small>
+                                        <span>
+                                            06/21
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="card-weekly-limit">
+                                    <div class="limit-bar" style="--w: 9%;"></div>
+                                    <span>Weekly payment limit</span>
+                                    <span>$350.60 / $4000</span>
+                                </div>
+                            </div>
+                            <div class="card-money">
+                                <div class="ballance">
+                                    <i class="currency">$</i> 2850.75
+                                    <small>
+                                        Current balance
+                                    </small>
+                                </div>
+                                <div class="income">
+                                    $ 1500.50
+                                    <small>
+                                        Income
+                                    </small>
+                                </div>
+                                <div class="outcome">
+                                    $ 350.60
+                                    <small>
+                                        Outcome
+                                    </small>
+                                </div>
+                                <div class="deactivate-card switcher" id="deactivateCard">
+                                    <small>
+                                        Deactivate card
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="white-block transactions-history">
+                        <h3 class="block-title">
+                            Transaction history
+                        </h3>
+                        <div class="transactions-table">
+                            <table class="table-data">
+                                <tr>
+                                    <th>Reciever</th>
+                                    <th>Type</th>
+                                    <th>Date</th>
+                                    <th>Amount</th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="cell">
+                                            <svg class="icon">
+                                                <use href="./img/sprite.svg#basket_small"></use>
+                                            </svg>
+                                            <span>Tesco Market</span>
+                                        </div>
+                                    </td>
+                                    <td>Shopping</td>
+                                    <td>13 Dec 2020</td>
+                                    <td>$75.67</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="cell">
+                                            <svg class="icon">
+                                                <use href="./img/sprite.svg#truck"></use>
+                                            </svg>
+                                            <span>ElectroMen Market</span>
+                                        </div>
+                                    </td>
+                                    <td>Shopping</td>
+                                    <td>14 Dec 2020</td>
+                                    <td>$250.00</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="cell">
+                                            <svg class="icon">
+                                                <use href="./img/sprite.svg#feather"></use>
+                                            </svg>
+                                            <span>Fiorgio Restaurant</span>
+                                        </div>
+                                    </td>
+                                    <td>Food</td>
+                                    <td>07 Dec 2020</td>
+                                    <td>$19.50</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="cell">
+                                            <svg class="icon">
+                                                <use href="./img/sprite.svg#user_small"></use>
+                                            </svg>
+                                            <span>John Mathew Kayne</span>
+                                        </div>
+                                    </td>
+                                    <td>Sport</td>
+                                    <td>06 Dec 2020</td>
+                                    <td>$350</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="cell">
+                                            <svg class="icon">
+                                                <use href="./img/sprite.svg#user_small"></use>
+                                            </svg>
+                                            <span>Ann Marlin</span>
+                                        </div>
+                                    </td>
+                                    <td>Shopping</td>
+                                    <td>31 Nov 2020</td>
+                                    <td>$430</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="goals transparent-block">
+                    <h3 class="block-title">
+                        Goals
+                        <svg class="icon">
+                            <use href="./img/sprite.svg#plus-circle"></use>
+                        </svg>
+                    </h3>
+                    <div class="goals-list">
+                        <div class="goal-item white-block">
+                            <span class="goal-sum">$550</span>
+                            <span class="goal-date">12/20/20</span>
+                            <img src="img/sprite/mountain.svg" alt="mountain">
+                            <h4 class="goal-title">Holidays</h4>
+                        </div>
+                        <div class="goal-item white-block">
+                            <span class="goal-sum">$200</span>
+                            <span class="goal-date">12/20/20</span>
+                            <img src="img/sprite/paint-brush.svg" alt="paint brush">
+                            <h4 class="goal-title">Renovation</h4>
+                        </div>
+                        <div class="goal-item white-block">
+                            <span class="goal-sum">$820</span>
+                            <span class="goal-date">12/20/20</span>
+                            <img src="img/sprite/controller.svg" alt="controller">
+                            <h4 class="goal-title">Xbox</h4>
+                        </div>
+                        <div class="goal-item white-block" style="display: none;">
+                            <span class="goal-sum">$550</span>
+                            <span class="goal-date">12/20/20</span>
+                            <img src="img/sprite/mountain.svg" alt="mountain">
+                            <h4 class="goal-title">Holidays</h4>
+                        </div>
+                    </div>
+                    <h3 class="block-title">Outcome Statistics</h3>
+                    <div class="statistics">
+                        <div class="statistics-bars">
+                            <div class="statistics-item">
+                                <svg class="icon">
+                                    <use href="./img/sprite.svg#basket"></use>
+                                </svg>
+                                <div class="progress shopping" style="--progress: 52%">
+                                    <span>Shoppping</span>
+                                </div>
+                                <div class="progress-value">
+                                    52%
+                                </div>
+                            </div>
+                            <div class="statistics-item">
+                                <svg class="icon">
+                                    <use href="./img/sprite.svg#truck_big"></use>
+                                </svg>
+                                <div class="progress electronics" style="--progress: 21%">
+                                    <span>Electronics</span>
+                                </div>
+                                <div class="progress-value">
+                                    21%
+                                </div>
+                            </div>
+                            <div class="statistics-item">
+                                <svg class="icon">
+                                    <use href="./img/sprite.svg#plane"></use>
+                                </svg>
+                                <div class="progress travels" style="--progress: 74%">
+                                    <span>Travels</span>
+                                </div>
+                                <div class="progress-value">
+                                    74%
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="new-transaction">
+                        <div class="send-transaction white-block">
+                            <h3 class="block-title">
+                                New transaction
+                            </h3>
+                            <div class="recievers">
+                                <div class="user">
+                                    <img src="img/recievers/ann.png" alt="Ann">
+                                    <span>Ann</span>
+                                </div>
+                                <div class="user">
+                                    <img src="img/recievers/monica.png" alt="monica">
+                                    <span>Monica</span>
+                                </div>
+                                <div class="user">
+                                    <img src="img/recievers/john.png" alt="john">
+                                    <span>John</span>
+                                </div>
+                                <div class="user">
+                                    <img src="img/recievers/mike.png" alt="mike">
+                                    <span>Mike</span>
+                                </div>
+                                <div class="user">
+                                    <img src="img/recievers/mia.png" alt="mia">
+                                    <span>Mia</span>
+                                </div>
+                                <div class="user add-new">
+                                    <svg class="icon">
+                                        <use href="./img/sprite.svg#plus-circle"></use>
+                                    </svg>
+                                    <span>Add new</span>
+                                </div>
+                                <form action="send/" method="post">
+                                    <input type="text" id="transaction" name="transaction" placeholder="0" required autocomplete="off">
+                                    <button type="submit" class="btn btn-yellow">
+                                        Send the transfer
+                                        <svg class="icon">
+                                            <use href="./img/sprite.svg#angle-right"></use>
+                                        </svg>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="new-loan">
+                            <svg class="icon">
+                                <use href="./img/sprite.svg#cloud_dollar"></use>
+                            </svg>
+                            <a href="#">
+                                Get great loan!
+                                <svg class="icon">
+                                    <use href="./img/sprite.svg#angle-right-big"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>

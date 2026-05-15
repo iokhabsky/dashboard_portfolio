@@ -1,0 +1,713 @@
+@font-face {
+  font-family: "Suprema";
+  src: url("../fonts/Suprema-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SupremaSemiBold";
+  src: url("../fonts/Suprema-SemiBold.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+:root {
+  --sidebar-sprite: #C7C7C7;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+input[type=text] {
+  height: 36px;
+  width: 175px;
+  padding: 0 10px;
+  font-family: "Lato";
+  font-weight: 300;
+  font-size: 23px;
+  color: #C7C7C7;
+  border-radius: 8px;
+  border: 1px solid #C7C7C7;
+}
+input[type=text]:focus {
+  border-color: #197BBD;
+  outline: none;
+}
+input[type=text]::-moz-placeholder {
+  font-family: "Lato";
+  color: #C7C7C7;
+}
+input[type=text]::placeholder {
+  font-family: "Lato";
+  color: #C7C7C7;
+}
+
+body {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  padding-top: 100px;
+  padding-bottom: 80px;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #404040;
+  background-image: linear-gradient(to right, #E5E5E5, #F0F0F0);
+}
+
+.white-block {
+  padding: 15px 25px 35px 25px;
+  border-radius: 28px;
+  box-shadow: 0 16px 24px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(0, 0, 0, 0.04), 0 0 0 rgba(0, 0, 0, 0.04);
+}
+
+.transparent-block {
+  padding: 15px 0 35px 0;
+}
+
+.block-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  font-family: "SupremaSemiBold";
+  font-weight: 500;
+  font-size: 20px;
+}
+.block-title .icon {
+  margin-left: 5px;
+  width: 24px;
+  height: 24px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 19px;
+  border-radius: 14px;
+  font-size: 11px;
+  font-family: "Quicksand";
+  font-weight: 600;
+  color: #404040;
+  border: none;
+}
+.btn .icon {
+  width: 8px;
+  height: 8px;
+  margin-left: 6px;
+}
+.btn-yellow {
+  background-color: #FFC145;
+}
+.btn-yellow:hover {
+  background-color: #d8ad57;
+}
+.btn-yellow:active {
+  background-color: #ffda8f;
+}
+
+.switcher {
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+.switcher.active:after {
+  right: 0;
+  background-color: #197BBD;
+}
+.switcher:before {
+  display: block;
+  content: "";
+  width: 45px;
+  height: 24px;
+  border-radius: 14px;
+  background-color: #EBEBEB;
+}
+.switcher:after {
+  position: absolute;
+  right: 21px;
+  top: 0;
+  display: block;
+  content: "";
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #CDCDCD;
+  transition: all, 0.25s ease;
+}
+
+.app {
+  display: flex;
+  align-items: stretch;
+  width: 1476.59px;
+  margin: auto;
+  border-radius: 59px;
+  background-color: #fff;
+}
+
+.app-sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 251.54px;
+  min-width: 251.54px;
+  border-right: 1px solid #EBEBEB;
+}
+.app-sidebar .logo {
+  display: inline-block;
+  margin-left: 43px;
+  margin-top: 55px;
+}
+
+.icon-logo {
+  width: 135.5px;
+  height: 33.26px;
+}
+
+.nav {
+  margin-top: 79px;
+  margin-left: 40px;
+}
+
+.nav-item {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 165px;
+  padding: 0 15px 0 53px;
+  line-height: 39px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #C7C7C7;
+  border-radius: 4px;
+}
+.nav-item:not(:last-of-type) {
+  margin-bottom: 7px;
+}
+.nav-item:hover, .nav-item.active {
+  background-color: #F0F7FF;
+  color: #197BBD;
+}
+.nav-item:hover .icon, .nav-item.active .icon {
+  --sidebar-sprite: #197BBD;
+}
+.nav-item .icon {
+  position: absolute;
+  left: 10px;
+  top: 4px;
+  width: 30px;
+  height: 30px;
+}
+
+.upgrade {
+  width: -moz-max-content;
+  width: max-content;
+  margin-top: auto;
+  margin-bottom: 33px;
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.upgrade > .icon {
+  width: 71px;
+  height: 80px;
+}
+.upgrade p {
+  max-width: 108px;
+  margin-top: 8px;
+  margin-bottom: 15px;
+  font-family: "Suprema";
+  font-weight: 400;
+  font-size: 9px;
+  text-align: center;
+}
+
+.app-data {
+  width: 100%;
+  padding: 35px 45px;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.app-header-text h1 {
+  font-family: "SupremaSemiBold";
+  font-size: 43px;
+  font-weight: 500;
+}
+.app-header-text h2 {
+  font-family: "Suprema";
+  font-size: 16px;
+  font-weight: 400;
+  color: #A0A0A0;
+}
+
+.app-profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.app-profile .notifications {
+  margin-left: 20px;
+}
+.app-profile .messages .icon,
+.app-profile .notifications .icon {
+  width: 24px;
+  height: 24px;
+}
+
+.app-content {
+  display: grid;
+  grid-template-columns: minmax(596px, 50%) minmax(506px, 50%);
+  grid-gap: 30px;
+}
+
+.app-user {
+  position: relative;
+  margin-left: 24px;
+  padding-left: 45px;
+  padding-top: 0;
+}
+.app-user .icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #FFC145;
+}
+.app-user span {
+  display: block;
+}
+.app-user span.name {
+  font-family: "SupremaSemiBold";
+  font-weight: 500;
+  font-size: 14px;
+}
+.app-user span.role {
+  font-family: "Suprema";
+  font-weight: 400;
+  font-size: 14px;
+  color: #A0A0A0;
+}
+
+.card-bank {
+  position: relative;
+}
+.card-bank:before {
+  display: block;
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 3px;
+  width: 1px;
+  height: 200px;
+  background-color: #E8E8E8;
+}
+.card-bank .icon {
+  position: absolute;
+  right: -36px;
+  bottom: -4px;
+}
+
+.card-data {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 320px;
+  height: 205px;
+  padding: 20px;
+  color: #fff;
+  border-radius: 26px;
+  background-image: linear-gradient(to bottom, #197BBD, #3391D0);
+  overflow: hidden;
+}
+.card-data .card-bank-name,
+.card-data .card-bank-status {
+  width: 100%;
+}
+.card-data .card-bank-name {
+  font-family: "Quicksand";
+  font-weight: 600;
+  font-size: 17px;
+}
+.card-data .card-bank-status {
+  margin-bottom: 45px;
+  text-transform: uppercase;
+  font-size: 8px;
+  color: rgba(255, 255, 255, 0.39);
+}
+.card-data .card-number {
+  margin-bottom: 30px;
+  font-family: "Quicksand";
+  font-weight: 500;
+  font-size: 21px;
+}
+.card-data .card-number span:not(:last-child) {
+  margin-right: 15px;
+}
+.card-data .card-holder {
+  margin-right: 45px;
+}
+.card-data .card-holder span,
+.card-data .card-expire span {
+  font-size: 12px;
+  font-weight: 500;
+}
+.card-data small {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 7px;
+  font-weight: 500;
+}
+
+.card-weekly-limit {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 320px;
+}
+
+.limit-bar {
+  position: relative;
+  height: 10px;
+  width: 320px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  background-color: #F1F1F1;
+  border-radius: 14px;
+}
+.limit-bar:after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  height: 10px;
+  width: var(--w);
+  content: "";
+  background-color: #197BBD;
+  border-radius: 14px;
+}
+.limit-bar + span {
+  font-family: "Suprema";
+  font-weight: 400;
+  font-size: 14px;
+  color: #A0A0A0;
+}
+
+.cards .card {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+}
+.cards .card .ballance {
+  color: #197BBD;
+  font-weight: 600;
+  font-size: 31px;
+}
+.cards .card .ballance .currency {
+  display: inline-block;
+  margin-right: 4px;
+  font-size: 18px;
+  font-style: normal;
+}
+.cards .card .income {
+  margin-top: 22px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #439A86;
+}
+.cards .card .outcome {
+  margin-top: 22px;
+  font-weight: 500;
+  font-size: 18px;
+  color: #BB4430;
+}
+.cards .card .deactivate-card {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  margin-top: 22px;
+}
+.cards .card .deactivate-card small {
+  display: block;
+  width: 100%;
+}
+.cards .card-money {
+  text-align: right;
+}
+.cards .card-money small {
+  display: block;
+  margin-top: 9px;
+  color: #A0A0A0;
+  font-size: 14px;
+  font-family: "Suprema";
+  font-weight: 400;
+}
+
+.transactions-history {
+  margin-top: 30px;
+}
+
+.transactions-table {
+  text-align: left;
+}
+.transactions-table .cell {
+  display: flex;
+  align-items: center;
+}
+.transactions-table th, .transactions-table td {
+  padding: 10px 0;
+}
+.transactions-table th {
+  font-family: "Suprema";
+  font-weight: 40;
+  color: #AEAEAE;
+  font-size: 14px;
+}
+.transactions-table th:last-of-type {
+  text-align: right;
+}
+.transactions-table tr td {
+  font-size: 14px;
+  border-bottom: 1px solid #ECECEC;
+}
+.transactions-table tr td:not(:last-of-type) {
+  font-family: "Suprema";
+  font-weight: 400;
+}
+.transactions-table tr td:nth-of-type(2) {
+  color: #C7C7C7;
+}
+.transactions-table tr td:nth-of-type(3) {
+  color: #C7C7C7;
+}
+.transactions-table tr td:last-of-type {
+  font-weight: 600;
+  text-align: right;
+}
+.transactions-table .table-data {
+  width: 100%;
+}
+.transactions-table .table-data .icon {
+  margin-right: 5px;
+  width: 20px;
+  height: 20px;
+}
+
+.goals {
+  padding-bottom: 0;
+}
+
+.goals-list {
+  display: flex;
+  margin-bottom: 55px;
+}
+
+.goal-item {
+  display: inline-block;
+  width: 158px;
+  height: 169px;
+  margin-right: 15px;
+  padding-bottom: 12px;
+}
+.goal-item > * {
+  display: block;
+}
+.goal-item .goal-sum {
+  font-weight: 500;
+  font-size: 24px;
+  color: #696969;
+}
+.goal-item .goal-date {
+  margin-bottom: 35px;
+  font-family: "Suprema";
+  font-weight: 400;
+  font-size: 14px;
+  color: #AEAEAE;
+}
+.goal-item img {
+  width: 35px;
+}
+.goal-item .goal-title {
+  margin-top: 2px;
+  font-family: "Suprema";
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.statistics-item {
+  position: relative;
+  min-height: 43px;
+  padding-left: 57px;
+  padding-right: 81px;
+  margin-top: 23px;
+}
+.statistics-item .icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 42px;
+  height: 44px;
+  filter: drop-shadow(0 16px 24px rgba(0, 0, 0, 0.06)) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.04)) drop-shadow(0 0 1px rgba(0, 0, 0, 0.04));
+}
+.statistics-item .progress {
+  position: relative;
+  padding-top: 5px;
+}
+.statistics-item .progress span {
+  display: inline-block;
+  margin-top: 8px;
+  font-weight: 400;
+  font-family: "Suprema";
+  font-size: 14px;
+  color: #AEAEAE;
+}
+.statistics-item .progress:before {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 10px;
+  border-radius: 13px;
+  background-color: #F1F1F1;
+}
+.statistics-item .progress:after {
+  position: absolute;
+  left: 0;
+  top: 5px;
+  display: block;
+  content: "";
+  width: var(--progress);
+  height: 10px;
+  border-radius: 13px;
+}
+.statistics-item .progress.shopping:after {
+  background-image: linear-gradient(to right, #FCAE73, #F79042);
+}
+.statistics-item .progress.electronics:after {
+  background-image: linear-gradient(to right, #209D43, #2BC255);
+}
+.statistics-item .progress.travels:after {
+  background-color: #70A6E8;
+}
+.statistics-item .progress-value {
+  position: absolute;
+  right: 0;
+  top: -5px;
+  width: 66px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.new-transaction {
+  display: grid;
+  grid-template-columns: minmax(341px, 70%) minmax(158px, 30%);
+  grid-gap: 15px;
+  margin-top: 53px;
+}
+.new-transaction .send-transaction {
+  padding: 18px 10px 12px 10px;
+  border-radius: 19px;
+}
+.new-transaction .recievers {
+  display: flex;
+  flex-wrap: wrap;
+}
+.new-transaction .recievers .user img {
+  width: 42px;
+}
+.new-transaction .recievers .user .icon {
+  margin: 11px 0 0 14px;
+  width: 20px;
+  height: 20px;
+}
+.new-transaction .recievers .user span {
+  display: block;
+  margin-top: 2px;
+  font-family: "Suprema";
+  font-size: 12px;
+  text-align: center;
+}
+.new-transaction .recievers .user:not(:last-of-type) {
+  margin-right: 12px;
+}
+.new-transaction .recievers .user.add-new {
+  cursor: pointer;
+}
+.new-transaction .recievers .user.add-new span {
+  margin-top: 10px;
+}
+.new-transaction .recievers form {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: 15px;
+}
+.new-transaction .recievers form input[name=transaction] {
+  background-image: url("../img/sprite/currency_dollar.svg");
+  background-position: top 5.76px right 9.76px;
+  background-size: 11px;
+  background-repeat: no-repeat;
+  padding-right: 30px;
+}
+.new-transaction .recievers form button[type=submit] {
+  width: 132px;
+  padding: 11px;
+  margin-left: 10px;
+  font-size: 11px;
+  text-align: center;
+  cursor: pointer;
+}
+.new-transaction .recievers form button[type=submit] .icon {
+  margin-left: 0;
+}
+.new-transaction .new-loan {
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  padding: 7px 15px;
+  background-image: linear-gradient(to bottom, #ED654C, #D05842);
+  border-radius: 19px;
+  overflow: hidden;
+}
+.new-transaction .new-loan > .icon {
+  width: 143px;
+  height: 120px;
+  position: absolute;
+  left: -11px;
+  top: 4px;
+}
+.new-transaction .new-loan a {
+  position: relative;
+  font-family: "SupremaSemiBold";
+  color: white;
+  font-weight: 500;
+  font-size: 20px;
+}
+.new-transaction .new-loan a:hover .icon {
+  margin-left: 4px;
+}
+.new-transaction .new-loan a .icon {
+  width: 14px;
+  height: 14px;
+  margin-left: 0;
+  transition: all 0.25s ease;
+}/*# sourceMappingURL=main.css.map */

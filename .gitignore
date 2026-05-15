@@ -1,0 +1,41 @@
+# dependencies
+node_modules/
+
+# build
+dist/
+build/
+
+# logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# env
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# cache
+.cache/
+.parcel-cache/
+
+# sass
+.sass-cache/
+
+# coverage
+coverage/
+
+# temporary files
+*.tmp
+*.temp
+
+# mapping files
+scss/*.css.map
