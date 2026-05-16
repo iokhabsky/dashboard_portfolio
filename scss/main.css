@@ -157,7 +157,7 @@ body {
   height: 24px;
   border-radius: 50%;
   background-color: #CDCDCD;
-  transition: all, 0.25s ease;
+  transition: all 0.25s ease;
 }
 
 .icon-logo {
