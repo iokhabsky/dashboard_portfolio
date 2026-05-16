@@ -31,6 +31,124 @@
     }
 }
 
+.app-data {
+    width: 100%;
+    padding: 35px 45px;
+}
+
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.app-header-text {
+    h1 {
+        font-family: "SupremaSemiBold";
+        font-size: 43px;
+        font-weight: 500;
+    }
+
+    h2 {
+        font-family: "Suprema";
+        font-size: 16px;
+        font-weight: 400;
+        color: $text_light;
+    }
+}
+
+.app-profile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .notifications {
+        position: relative;
+        margin-left: 20px;
+
+        &.has-new {
+
+
+            &:before {
+                position: absolute;
+                right: 4px;
+                top: 0;
+                display: block;
+                content: "";
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background-color: #BB4430;
+            }
+
+            &:hover:before {
+                background-color: #f63d1c;
+            }
+        }
+    }
+
+    .messages,
+    .notifications {
+        cursor: pointer;
+
+        &:hover {
+            --profile-icon: #444;
+        }
+
+        .icon {
+            width: 24px;
+            height: 24px;
+        }
+    }
+}
+
+.app-content {
+    display: grid;
+    grid-template-columns: minmax(596px, 50%) minmax(506px, 50%);
+    grid-gap: 30px;
+}
+
+.app-user {
+    position: relative;
+    margin-left: 24px;
+    padding-left: 45px;
+    padding-top: 0;
+    cursor: pointer;
+    transition: all .3s ease;
+
+    &:hover {
+        opacity: .7;
+    }
+
+    .icon {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background-color: #FFC145;
+    }
+
+    span {
+        display: block;
+
+        &.name {
+            font-family: "SupremaSemiBold";
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        &.role {
+            font-family: "Suprema";
+            font-weight: 400;
+            font-size: 14px;
+            color: $text_light;
+        }
+    }
+}
+
 
 .nav {
     margin-top: 79px;
@@ -94,105 +212,6 @@
         font-weight: 400;
         font-size: 9px;
         text-align: center;
-    }
-}
-
-.app-data {
-    width: 100%;
-    padding: 35px 45px;
-}
-
-.app-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 40px;
-}
-
-.app-header-text {
-    h1 {
-        font-family: "SupremaSemiBold";
-        font-size: 43px;
-        font-weight: 500;
-    }
-
-    h2 {
-        font-family: "Suprema";
-        font-size: 16px;
-        font-weight: 400;
-        color: $text_light;
-    }
-}
-
-
-
-.app-profile {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    .notifications {
-        margin-left: 20px;
-    }
-
-    .messages,
-    .notifications {
-        cursor: pointer;
-
-        &:hover {
-            --profile-icon: #444;
-        }
-
-        .icon {
-            width: 24px;
-            height: 24px;
-        }
-    }
-}
-
-.app-content {
-    display: grid;
-    grid-template-columns: minmax(596px, 50%) minmax(506px, 50%);
-    grid-gap: 30px;
-}
-
-.app-user {
-    position: relative;
-    margin-left: 24px;
-    padding-left: 45px;
-    padding-top: 0;
-    cursor: pointer;
-    transition: all .3s ease;
-
-    &:hover {
-        opacity: .7;
-    }
-
-    .icon {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 35px;
-        height: 35px;
-        border-radius: 50%;
-        background-color: #FFC145;
-    }
-
-    span {
-        display: block;
-
-        &.name {
-            font-family: "SupremaSemiBold";
-            font-weight: 500;
-            font-size: 14px;
-        }
-
-        &.role {
-            font-family: "Suprema";
-            font-weight: 400;
-            font-size: 14px;
-            color: $text_light;
-        }
     }
 }
 

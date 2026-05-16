@@ -33,14 +33,17 @@ window.onload = function () {
 
     // card switcher
 
-    const switcher = document.querySelector(".switcher");
+    const switchers = document.querySelectorAll('.switcher');
 
-    switcher.addEventListener('click', () => {
-        switcher.classList.toggle('active');
-        if(switcher.id === 'deactivateCard') {
+    switchers.forEach((switcher) => {
+        switcher.addEventListener('click', () => {
+            // клас на самому switcher
+            switcher.classList.toggle('active');
+
+            // клас на подвійного батька
             switcher.parentElement.parentElement.classList.toggle('hidden');
-        }
+        });
     });
-    
+
     //
 }
