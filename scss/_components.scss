@@ -1,0 +1,416 @@
+// most used elements
+
+.white-block {
+    padding: 15px 25px 35px 25px;
+    border-radius: 28px;
+    box-shadow: 0 16px 24px rgba(#000, .06), 0 2px 6px rgba(#000, .04), 0 0 0 rgba(#000, .04);
+}
+
+.transparent-block {
+    padding: 15px 0 35px 0;
+}
+
+.block-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-family: "SupremaSemiBold";
+    font-weight: 500;
+    font-size: 20px;
+
+    .icon {
+        margin-left: 5px;
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+
+        &:hover {
+            --plus-circle: #af790e;
+            --plus-icon: #fff;
+        }
+    }
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 19px;
+    border-radius: 14px;
+    font-size: 11px;
+    font-family: "Quicksand";
+    font-weight: 600;
+    color: #404040;
+    border: none;
+
+    .icon {
+        width: 8px;
+        height: 8px;
+        margin-left: 6px;
+    }
+
+    &-yellow {
+        background-color: $yellow;
+
+        &:hover {
+            background-color: #d8ad57;
+        }
+
+        &:active {
+            background-color: #ffda8f;
+        }
+    }
+}
+
+.switcher {
+    position: relative;
+    display: block;
+    cursor: pointer;
+
+    &.active:after {
+        right: 0;
+        background-color: $base_color;
+    }
+
+    &:before {
+        display: block;
+        content: "";
+        width: 45px;
+        height: 24px;
+        border-radius: 14px;
+        background-color: #EBEBEB;
+    }
+
+    &:after {
+        position: absolute;
+        right: 21px;
+        top: 0;
+        display: block;
+        content: "";
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: #CDCDCD;
+        transition: all, .25s ease;
+    }
+}
+
+.icon-logo {
+    width: 135.5px;
+    height: 33.26px;
+    transition: all .25s ease;
+
+    &:hover {
+        opacity: 0.7;
+    }
+
+    &:active {
+        opacity: 1;
+    }
+}
+
+//
+
+// bank card styles
+
+.cards {
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        width: 10px;
+        height: 20px;
+        top: 115px;
+        color: $text_gray;
+        transition: all .25s ease;
+
+        &:hover {
+            color: $text_primary;
+        }
+    }
+
+    .swiper-button-prev {
+        left: 0;
+        right: auto;
+    }
+
+    .swiper-button-next {
+        left: 350px;
+        right: auto;
+    }
+
+    .card-item {
+        display: grid;
+        grid-template-columns: minmax(360px, 360px) 1fr;
+        width: 546px;
+        height: 274.2px;
+
+        &.hidden {
+            .card-bank {
+                opacity: 0.3;
+                cursor: not-allowed;
+            }
+        }
+    }
+
+    .ballance {
+        color: $base_color;
+        font-weight: 600;
+        font-size: 31px;
+
+        .currency {
+            display: inline-block;
+            margin-right: 4px;
+            font-size: 18px;
+            font-style: normal;
+        }
+    }
+
+    .income {
+        margin-top: 22px;
+        font-size: 18px;
+        font-weight: 500;
+        color: #439A86;
+    }
+
+    .outcome {
+        margin-top: 22px;
+        font-weight: 500;
+        font-size: 18px;
+        color: #BB4430;
+    }
+
+    .deactivate-card {
+        display: flex;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        margin-top: 22px;
+
+        small {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    .card-money {
+        min-width: 186px;
+        text-align: right;
+
+        small {
+            display: block;
+            margin-top: 9px;
+            color: $text_light;
+            font-size: 14px;
+            font-family: "Suprema";
+            font-weight: 400;
+        }
+    }
+}
+
+.card-bank {
+    position: relative;
+    transition: opacity, .25s ease;
+
+    &.orange {
+        .card-data {
+            background-image: linear-gradient(to right, #FCAE73, #F79042);
+        }
+
+        .limit-bar {
+            &:after {
+                background-color: transparent;
+                background-image: linear-gradient(to right, #FCAE73, #F79042);
+            }
+        }
+    }
+
+    &:before {
+        display: block;
+        content: "";
+        position: absolute;
+        right: -15px;
+        top: 3px;
+        width: 1px;
+        height: 200px;
+        background-color: #E8E8E8;
+    }
+
+    .icon {
+        position: absolute;
+        right: -36px;
+        bottom: -4px;
+    }
+}
+
+.card-data {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 320px;
+    height: 205px;
+    padding: 20px;
+    margin-left: 20px;
+    color: #fff;
+    border-radius: 26px;
+    background-image: linear-gradient(to bottom, #197BBD, #3391D0);
+    overflow: hidden;
+
+    .card-bank-name,
+    .card-bank-status {
+        width: 100%;
+    }
+
+    .card-bank-name {
+        font-family: "Quicksand";
+        font-weight: 600;
+        font-size: 17px
+    }
+
+    .card-bank-status {
+        margin-bottom: 45px;
+        text-transform: uppercase;
+        font-size: 8px;
+        color: rgba(#fff, .39);
+    }
+
+    .card-number {
+        margin-bottom: 30px;
+        font-family: "Quicksand";
+        font-weight: 500;
+        font-size: 21px;
+
+        span:not(:last-child) {
+            margin-right: 15px;
+        }
+    }
+
+    .card-holder {
+        margin-right: 45px;
+    }
+
+    .card-holder,
+    .card-expire {
+        span {
+            font-size: 12px;
+            font-weight: 500;
+        }
+    }
+
+    small {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 7px;
+        font-weight: 500;
+    }
+}
+
+.card-weekly-limit {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 320px;
+    margin-left: 20px;
+
+    span:last-of-type {
+        font-weight: 500;
+    }
+}
+
+.limit-bar {
+    position: relative;
+    height: 10px;
+    width: 320px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    background-color: $progress_bar_color;
+    border-radius: 14px;
+
+    &:after {
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: block;
+        height: 10px;
+        width: var(--limit-w);
+        content: "";
+        background-color: $base_color;
+        border-radius: 14px;
+    }
+
+    +span {
+        font-family: "Suprema";
+        font-weight: 400;
+        font-size: 14px;
+        color: $text_light;
+    }
+}
+
+//
+
+// transactions table 
+
+.transactions-history {
+    margin-top: 30px;
+}
+
+.transactions-table {
+    text-align: left;
+
+    .cell {
+        display: flex;
+        align-items: center;
+    }
+
+    th,
+    td {
+        padding: 10px 0;
+    }
+
+    th {
+        font-family: "Suprema";
+        font-weight: 40;
+        color: $text_gray;
+        font-size: 14px;
+
+        &:last-of-type {
+            text-align: right;
+        }
+    }
+
+    tr {
+
+        td {
+            font-size: 14px;
+            border-bottom: 1px solid #ECECEC;
+
+            &:not(:last-of-type) {
+                font-family: "Suprema";
+                font-weight: 400;
+            }
+
+            &:nth-of-type(2) {
+                color: $text_light_gray;
+            }
+
+            &:nth-of-type(3) {
+                color: $text_light_gray;
+            }
+
+            &:last-of-type {
+                font-weight: 600;
+                text-align: right;
+            }
+
+        }
+    }
+
+    .table-data {
+        width: 100%;
+
+        .icon {
+            margin-right: 5px;
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
+
+//
