@@ -1,5 +1,4 @@
 window.onload = function () {
-    console.log("loaded");
 
     // cards slider
     const swiper = new Swiper('.card ', {
