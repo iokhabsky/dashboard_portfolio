@@ -34,10 +34,18 @@ window.onload = function () {
 
     const switchers = document.querySelectorAll('.switcher');
 
-    switchers.forEach((switcher) => {
-        switcher.addEventListener('click', () => {
+    switchers.forEach(switcher => {
+        switcher.addEventListener('click', (e) => {
+
+            let elText = switcher.firstElementChild;
             // клас на самому switcher
             switcher.classList.toggle('active');
+            // switcher.firstElementChild.innerHTML = "Activate Card";
+            
+            elText.innerHTML =
+                elText.innerHTML === 'Activate card'
+                    ? 'Deactivate card'
+                    : 'Activate card';
 
             // клас на подвійного батька
             switcher.parentElement.parentElement.classList.toggle('hidden');
