@@ -512,12 +512,84 @@ body {
   position: relative;
   margin-left: 24px;
   padding-left: 45px;
+  padding-right: 30px;
   padding-top: 0;
   cursor: pointer;
   transition: all 0.3s ease;
 }
-.app-user:hover {
-  opacity: 0.7;
+.app-user:before {
+  position: absolute;
+  right: 0;
+  top: 10px;
+  display: block;
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-left: 2px solid #333333;
+  border-top: 2px solid #333333;
+  transform: rotate(-135deg);
+  transition: transform 0.3s ease;
+}
+.app-user:hover .settings {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.app-user:hover:before {
+  transform: rotate(45deg);
+}
+.app-user .settings {
+  position: absolute;
+  right: 0;
+  top: 45px;
+  width: 150px;
+  background-color: #fff;
+  border-radius: 10px;
+  border: 1px solid #EBEBEB;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+.app-user .settings:before {
+  position: absolute;
+  right: 0;
+  top: -10px;
+  display: block;
+  content: "";
+  width: 100%;
+  height: 10px;
+  background-color: transparent;
+}
+.app-user .settings-option {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px 10px 35px;
+  font-family: "Suprema";
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #AEAEAE;
+  cursor: pointer;
+  background-position: left 10px center;
+  background-repeat: no-repeat;
+  background-size: 12px;
+}
+.app-user .settings-option:hover {
+  background-color: #F0F7FF;
+  color: #197BBD;
+}
+.app-user .settings-option:first-of-type {
+  background-image: url("../img/icons/user.png");
+  border-radius: 10px 10px 0 0;
+}
+.app-user .settings-option:nth-of-type(2) {
+  background-image: url("../img/icons/settings.png");
+}
+.app-user .settings-option:last-of-type {
+  background-image: url("../img/icons/logout.png");
+  background-position: left 11px center;
+  border-radius: 0 0 10px 10px;
 }
 .app-user .icon {
   position: absolute;
@@ -608,6 +680,7 @@ body {
 
 .goals-list {
   display: flex;
+  justify-content: space-between;
   margin-bottom: 55px;
 }
 
@@ -617,6 +690,9 @@ body {
   height: 169px;
   margin-right: 15px;
   padding-bottom: 12px;
+}
+.goal-item:nth-child(3) {
+  margin-right: 0;
 }
 .goal-item > * {
   display: block;
